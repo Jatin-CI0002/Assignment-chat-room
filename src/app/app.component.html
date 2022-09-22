@@ -1,0 +1,8 @@
+{{ title }}
+<input type="text" [(ngModel)]="user" (keydown)="onKeydown($event)"/>
+<button (click)="createUser()">Join</button>
+<div class="chat-window">
+  <div class="chat-box" *ngFor="let user of Users">
+    <app-chat [userName]="user"></app-chat>
+  </div>
+</div>
