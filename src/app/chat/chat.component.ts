@@ -19,6 +19,7 @@ export class ChatComponent{
   close:boolean = true;
   ngOnInit(){
     this.subscriber = this.messageService.message.subscribe(msg=>this.nextMessage(msg))
+    this.messages = JSON.parse(localStorage.getItem(this.userName) || "[]");
   }
 
   onKeydown(event: { key: string; }) {
@@ -49,5 +50,6 @@ export class ChatComponent{
   closeChat(){
     this.subscriber.unsubscribe();
     this.close = !this.close;
+    localStorage.setItem(this.userName,JSON.stringify(this.messages));
   }
 }

@@ -16,12 +16,7 @@ export class AppComponent {
     }
   }
   createUser(){
-  if(this.Users.includes(this.user))
-  {
-    alert("User is already in Chat");
-    return;
-  }
-  else if(!this.user){
+  if(!this.user){
     alert("Please Enter UserName");
     return;
   }
